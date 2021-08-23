@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -66,6 +67,7 @@ public class GoogleLoginAuth extends AppCompatActivity {
         // the GoogleSignInAccount will be non-null.
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(this);
         if(account!=null){
+            Toast.makeText(getApplicationContext(),"Signed in as " + account.getDisplayName(),Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(
                     GoogleLoginAuth.this,
                 MainActivity.class
@@ -98,6 +100,7 @@ public class GoogleLoginAuth extends AppCompatActivity {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
 
             // Signed in successfully, show authenticated UI.
+            Toast.makeText(getApplicationContext(),"Signed in as " + account.getDisplayName(),Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(
                     GoogleLoginAuth.this,
                     MainActivity.class

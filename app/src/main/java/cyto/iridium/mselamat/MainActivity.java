@@ -5,7 +5,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.RequiresApi;
@@ -20,6 +24,8 @@ import cyto.iridium.mselamat.databinding.ActivityMainBinding;
     public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+
+    private GoogleSignInClient GClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +43,8 @@ import cyto.iridium.mselamat.databinding.ActivityMainBinding;
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+
+        GClient = GoogleSignIn.getClient(this, GoogleSignInOptions.DEFAULT_SIGN_IN);
     }
 
     @Override
@@ -46,6 +54,21 @@ import cyto.iridium.mselamat.databinding.ActivityMainBinding;
         getMenuInflater().inflate(R.menu.main_menu, menu);
         menu.add("Feedback")
                 .setIntent(new Intent(this, FeedbackActivity.class));
+        menu.add("Signout")
+                .setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        GClient.signOut();
+                        Toast.makeText(getApplicationContext(),"Signed out successful",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(
+                                MainActivity.this,
+                                GoogleLoginAuth.class
+                        );
+                        startActivity(intent);
+                        finish();
+                        return false;
+                    }
+                });
         menu.add("Exit")
                 .setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
                     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
