@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MySelamat App</string>
+    <string name="app_name">MySelamat</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">SOP</string>
     <string name="title_notifications">Hotspots</string>
@@ -17,4 +17,5 @@
     <string name="login_failed">"Login failed"</string>
     <string name="login">Login</string>
     <string name="settings">Settings</string>
+    <string name="launch_text">MySelamat</string>
 </resources>
