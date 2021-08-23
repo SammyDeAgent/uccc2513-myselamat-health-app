@@ -69,6 +69,21 @@ import cyto.iridium.mselamat.databinding.ActivityMainBinding;
                         return false;
                     }
                 });
+        menu.add("Revoke Access")
+                .setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        GClient.revokeAccess();
+                        Toast.makeText(getApplicationContext(),"Authorization revoked successful",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(
+                                MainActivity.this,
+                                GoogleLoginAuth.class
+                        );
+                        startActivity(intent);
+                        finish();
+                        return false;
+                    }
+                });
         menu.add("Exit")
                 .setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
                     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
