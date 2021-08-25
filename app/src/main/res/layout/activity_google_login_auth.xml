@@ -12,9 +12,57 @@
         android:layout_height="47dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.681" />
+
+    <Button
+        android:id="@+id/AuthExit"
+        android:layout_width="140dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="8dp"
+        android:text="Exit"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/sign_in_button" />
+
+    <ImageView
+        android:id="@+id/AuthLogo"
+        android:layout_width="186dp"
+        android:layout_height="189dp"
+        android:layout_marginTop="112dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/vitalex" />
+
+    <TextView
+        android:id="@+id/AuthAuthor"
+        android:layout_width="187dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="24dp"
+        android:text="By Cytokine Vitalex"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/authAuthor"
+        android:layout_width="187dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="44dp"
+        android:text="MySelamat"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/AuthLogo" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
