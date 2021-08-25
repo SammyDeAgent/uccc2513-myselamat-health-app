@@ -7,7 +7,12 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.ScaleAnimation;
+import android.view.animation.TranslateAnimation;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -25,6 +30,8 @@ public class GoogleLoginAuth extends AppCompatActivity {
     private GoogleSignInClient GClient;
 
     private SignInButton btnSignIn;
+    private Button btn;
+    private ImageView iv;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,14 +56,40 @@ public class GoogleLoginAuth extends AppCompatActivity {
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (view.getId()) {
-                    case R.id.sign_in_button:
-                        signIn();
-                        break;
+                if (view.getId() == R.id.sign_in_button) {
+                    signIn();
                 }
 
             }
         });
+
+        btn = findViewById(R.id.AuthExit);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (view.getId() == R.id.AuthExit) {
+                    finishAffinity();
+                }
+            }
+        });
+
+
+        //Logo Animation
+        iv = findViewById(R.id.AuthLogo);
+
+        Animation bobb = new TranslateAnimation(
+                1f, 1f,
+                0f, 45f
+        );
+        bobb.setFillAfter(true); // Needed to keep the result of the animation
+        bobb.setDuration(1000);
+        bobb.setRepeatMode(Animation.REVERSE);
+        bobb.setRepeatCount(Animation.INFINITE);
+
+        AnimationSet heartBobb = new AnimationSet(true);
+        heartBobb.addAnimation(bobb);
+
+        iv.setAnimation(heartBobb);
 
     }
 
