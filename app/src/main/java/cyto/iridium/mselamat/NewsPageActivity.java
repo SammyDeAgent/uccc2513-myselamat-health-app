@@ -40,7 +40,12 @@ public class NewsPageActivity extends AppCompatActivity {
         datetimeTV = findViewById(R.id.indNewsDate);
         contentTV = findViewById(R.id.indNewsContent);
 
-        Picasso.get().load(imageurl).into(newsIV);
+        if (imageurl == null) {
+            Picasso.get().load("https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80").into(newsIV);
+        } else {
+            Picasso.get().load(imageurl).into(newsIV);
+        }
+
         titleTV.setText(title);
         datetimeTV.setText(datetime);
         descTV.setText(desc);
