@@ -4,7 +4,6 @@
     <string name="title_dashboard">SOP</string>
     <string name="title_notifications">Hotspots</string>
     <string name="textHeadline">Total COVID-19 Cases Today: 17235</string>
-    <string name="btnType">Select SOP Type</string>
     <string name="btnDownload">Download</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="prompt_email">Email</string>

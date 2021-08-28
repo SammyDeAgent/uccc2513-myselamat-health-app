@@ -24,40 +24,68 @@
         app:layout_constraintVertical_bias="0.011" />
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="317dp"
+        android:layout_height="438dp"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="500dp"
+
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="32dp"
+        android:gravity="center"
+
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/IVmoh"
+            android:src="@drawable/logocovid"
+            android:layout_margin="3dp"
+            android:padding="3dp"/>
 
         <Button
-            android:id="@+id/btnType"
+            android:id="@+id/btnPKP"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:text="@string/btnType" />
+            android:text="PKP (MCO)" />
 
         <Button
-            android:id="@+id/btnDownload"
+            android:id="@+id/btnPKPB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginLeft="16dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginBottom="41dp"
-            android:text="@string/btnDownload" />
+            android:text="PKPB (CMCO)" />
+
+        <Button
+            android:id="@+id/btnPKPD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="PKPD (EMCO)" />
+
+        <Button
+            android:id="@+id/btnPKPP"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="PKPP (RMCO)" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
