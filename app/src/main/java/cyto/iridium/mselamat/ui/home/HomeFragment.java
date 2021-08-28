@@ -16,6 +16,7 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 
 import cyto.iridium.mselamat.R;
@@ -81,8 +82,12 @@ public class HomeFragment extends Fragment {
                 loadingPB.setVisibility(View.GONE);
                 ArrayList<Article> articles = newsModel.getArticles();
                 for (int i = 0; i < articles.size(); i++) {
-                    articleArrayList.add(new Article(articles.get(i).getTitle(), articles.get(i).getDescription(), articles.get(i).getUrl(),
-                            articles.get(i).getUrlToImage(), articles.get(i).getPublishedAt(), articles.get(i).getContent()));
+                    try {
+                        articleArrayList.add(new Article(articles.get(i).getTitle(), articles.get(i).getDescription(), articles.get(i).getUrl(),
+                                articles.get(i).getUrlToImage(), articles.get(i).getPublishedAt(), articles.get(i).getContent()));
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    }
                 }
                 newsAdapter.notifyDataSetChanged();
             }

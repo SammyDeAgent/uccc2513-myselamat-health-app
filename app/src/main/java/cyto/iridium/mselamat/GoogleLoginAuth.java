@@ -44,7 +44,9 @@ public class GoogleLoginAuth extends AppCompatActivity {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestProfile()
                 .requestEmail()
-                .requestServerAuthCode("945784092647-pl06e2j6ap0cmtq059brqpk1eeiopttr.apps.googleusercontent.com")
+                // ALERT! USE YOUR RESPECTIVE GOOGLE CLIENT ID
+                //.requestServerAuthCode("945784092647-pl06e2j6ap0cmtq059brqpk1eeiopttr.apps.googleusercontent.com") //JieNan's Client ID
+                .requestServerAuthCode("505338635145-1charv896r0ofaqf8up8768uu1erhi4c.apps.googleusercontent.com") //Sammy's Client ID
                 .build();
 
         // Build a GoogleSignInClient with the options specified by gso.

@@ -8,9 +8,9 @@
     tools:context=".ui.home.HomeFragment">
 
     <androidx.appcompat.widget.Toolbar
+        android:id="@+id/idToolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/idToolbar">
+        android:layout_height="wrap_content">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -19,13 +19,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:layout_marginRight="15dp"
+                android:gravity="center"
+                android:padding="4dp"
                 android:text="News"
                 android:textAlignment="center"
-                android:padding="4dp"
-                android:gravity="center"
-                android:layout_marginEnd="15dp"
-                android:textStyle="bold"
-                android:layout_marginRight="15dp" />
+                android:textStyle="bold" />
 
         </RelativeLayout>
 
