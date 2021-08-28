@@ -53,7 +53,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
         Article article = articleArrayList.get(position);
         holder.title.setText(article.getTitle());
         holder.subtitle.setText(article.getDescription());
-        holder.datetime.setText(article.getPublishedAt());
+        holder.datetime.setText(article.getDate());
 
         if (article.getUrlToImage() == null) {
             Picasso.get().load("https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80").into(holder.newsIV);
@@ -68,7 +68,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.ViewHolder> {
             i.putExtra("url", article.getUrl());
             i.putExtra("imageurl", article.getUrlToImage());
             i.putExtra("content", article.getContent());
-            i.putExtra("datetime", article.getPublishedAt());
+            i.putExtra("datetime", article.getDate());
             context.startActivity(i);
         });
     }

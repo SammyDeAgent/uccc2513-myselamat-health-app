@@ -1,5 +1,9 @@
 package cyto.iridium.mselamat.ui.home;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Article {
 
     private String title;
@@ -9,13 +13,16 @@ public class Article {
     private String publishedAt;
     private String content;
 
-    public Article(String title, String description, String url, String urlToImage, String publishedAt, String content) {
+    private Date convertedDate;
+
+    public Article(String title, String description, String url, String urlToImage, String publishedAt, String content) throws ParseException {
         this.title = title;
         this.description = description;
         this.url = url;
         this.urlToImage = urlToImage;
         this.publishedAt = publishedAt;
         this.content = content;
+        this.convertedDate = convertDate(publishedAt);
     }
 
     public String getTitle() {
@@ -64,5 +71,19 @@ public class Article {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public String getDate(){
+        return convertDate2(this.convertedDate);
+    }
+
+    public Date convertDate(String publishedAt) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        return sdf.parse(publishedAt);
+    }
+
+    public String convertDate2(Date convertedDate){
+        SimpleDateFormat sdf2 = new SimpleDateFormat("EEEE, MMM dd, yyyy HH:mm:ss a");
+        return sdf2.format(convertedDate);
     }
 }
