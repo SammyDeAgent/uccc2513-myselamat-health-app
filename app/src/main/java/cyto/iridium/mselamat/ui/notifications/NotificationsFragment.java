@@ -274,7 +274,7 @@ public class NotificationsFragment extends Fragment {
             return "ORANGE - WARNING ";
         }
 
-        if(cases > 1){
+        if(cases > 0){
             textZone.setBackgroundColor(Color.YELLOW);
             return "YELLOW - CAUTION";
         }
