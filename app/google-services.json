@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1052983463471",
+    "project_id": "mselamat-db6c7",
+    "storage_bucket": "mselamat-db6c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1052983463471:android:47ca103ca06bb475d300da",
+        "android_client_info": {
+          "package_name": "cyto.iridium.mselamat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1052983463471-jsoqt3r3aqsp75jv0vjomvu0rqhrsvi8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBd2oelnTew6vuYPeFXnoy54WMl0kMZGkU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1052983463471-jsoqt3r3aqsp75jv0vjomvu0rqhrsvi8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
