@@ -8,20 +8,16 @@
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="150dp"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="51dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginRight="150dp"
-        android:text="Feedback Module"
-        app:layout_constraintBottom_toTopOf="@+id/btnBack"
+        android:layout_width="128dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:text="Feedback"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.062" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnSubmit"
@@ -31,7 +27,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="460dp"
+        android:layout_marginBottom="432dp"
         android:text="Submit"
         app:backgroundTint="#1FE1BA"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -45,25 +41,89 @@
         android:layout_height="52dp"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="408dp"
+        android:layout_marginBottom="396dp"
         android:onClick="onClickBack"
         android:text="@android:string/cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSubmit"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/btnAdminView"
+        android:layout_width="140dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Admin View"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBack"
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/feedbackTX"
+        android:layout_width="272dp"
+        android:layout_height="45dp"
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/btnSubmit"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        app:layout_constraintVertical_bias="0.486" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="132dp"
+        android:layout_height="129dp"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.933"
+        app:srcCompat="@drawable/vitalex" />
+
+    <TextView
+        android:id="@+id/appNameTx"
+        android:layout_width="151dp"
+        android:layout_height="32dp"
+        android:gravity="right"
+        android:text="MySelamat"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.874" />
+
+    <TextView
+        android:id="@+id/appNameTx2"
+        android:layout_width="151dp"
+        android:layout_height="32dp"
+        android:gravity="right"
+        android:text="By Cytokine Vitalex"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toBottomOf="@+id/appNameTx"
+        app:layout_constraintVertical_bias="0.285" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

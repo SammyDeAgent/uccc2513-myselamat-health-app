@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- check wifi state -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- check internet permission -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -13,7 +14,10 @@
         android:roundIcon="@drawable/vitalex_app_logo_my"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
-        <activity android:name=".NewsPageActivity"></activity>
+        <activity
+            android:name=".FeedbackViewActivity"
+            android:exported="true" />
+        <activity android:name=".NewsPageActivity" />
         <activity
             android:name=".LaunchScreen"
             android:exported="true"
@@ -30,6 +34,10 @@
             android:theme="@style/Theme.AppCompat.Light.DarkActionBar.FullScreen"></activity>
         <activity
             android:name=".GoogleLoginAuth"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"></activity>
+        <activity
+            android:name=".FeedbackActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen"></activity>
     </application>

@@ -5,13 +5,19 @@ import android.os.Build;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.firestore.FirebaseFirestore;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -53,7 +59,17 @@ import cyto.iridium.mselamat.databinding.ActivityMainBinding;
         super.onCreateOptionsMenu(menu);
         getMenuInflater().inflate(R.menu.main_menu, menu);
         menu.add("Feedback")
-                .setIntent(new Intent(this, FeedbackActivity.class));
+                .setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        Intent intent = new Intent(
+                                MainActivity.this,
+                                FeedbackActivity.class
+                        );
+                        startActivity(intent);
+                        return false;
+                    }
+                });
         menu.add("Signout")
                 .setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
                     @Override
@@ -95,4 +111,4 @@ import cyto.iridium.mselamat.databinding.ActivityMainBinding;
                 });
         return true;
     }
-}
+    }
